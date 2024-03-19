@@ -34,25 +34,10 @@ body {
 
 .type_main {
     width: 100%;
-    position: absolute;
+    position: relative;
     /* background-color: brown; */
     text-align: center;
-    font-size: 10em;
-    top: 0;
-    left: 0;
-}
-#op2 {
-    color: #fff;
-    mix-blend-mode:difference;
-    }
-#op2 #t2{
-opacity: 0;
-}
-
-#op1 p {
-    opacity: 0;
-}
-
-#op1 #t2 {
-    opacity: 100%;
+    font-size: 2em;
+    height: 100%;
+    margin-top: 10%;
 }
