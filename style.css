@@ -1,0 +1,14 @@
+* {
+    text-decoration-line: none;
+}
+
+body {
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+#Anchovy {
+    width: 100%;
+    /* background-color: red; */
+    height: 100%;
+}
