@@ -17,11 +17,15 @@ body {
 
 #Anchovy {
     position: fixed;
-    width: 100%;
+    width: 50%;
     /* background-color: red; */
-    height: 100%;
-    left: 0;
-    top: 0;
+    height: 50%;
+    top: 40%;
+    left: 25%;
+    /* background-color: blue; */
+    /* opacity: 30%; */
+    /* mix-blend-mode: exclusion; */
+    /* pointer-events: none; */
 }
 
 .Gravitas {
@@ -33,10 +37,19 @@ body {
 }
 
 .type_main {
-    width: 100%;
+    width: 50%;
     /* background-color: brown; */
     text-align: center;
-    font-size: 2em;
-    height: 100%;
-    margin-top: 10%;
+    font-size: 1.8em;
+    margin: auto;
+    margin-top: 4%;
+    word-wrap: break-word;
+}
+
+.type_main div {
+    margin-bottom: 3% ;
+    line-height: 2em;
+}
+.type_main p {
+line-height: 1.4em;
 }
