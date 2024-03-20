@@ -119,7 +119,7 @@ line-height: 1.6em;
     /* display: block; */
     top: -4%;
     opacity: 0%;
-    -moz-transition-delay: .7s;
+    transition-delay: .7s;
     transition: .7s;
     z-index: 0;
     pointer-events: none
