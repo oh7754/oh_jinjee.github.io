@@ -39,7 +39,5 @@ $(document).ready(
             }
         }
         
-        
-        
     }
 );
