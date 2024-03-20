@@ -9,25 +9,9 @@
 body {
     width: 100%;
     background-color: #000;
-
-}
-#main_con {
-    /* background-color: blueviolet; */
-    height: 200%;
 }
 
-#Anchovy {
-    position: fixed;
-    width: 100%;
-    /* background-color: red; */
-    height: 130%;
-    top: 0%;
-    /* left: 25%; */
-    /* background-color: blue; */
-    /* opacity: 30%; */
-    /* mix-blend-mode: exclusion; */
-    /* pointer-events: none; */
-}
+/* 기본 폰트 셋팅 */
 
 .Kalnia {
     font-family: "Kalnia", serif;
@@ -36,6 +20,29 @@ body {
     font-style: normal;
     font-variation-settings: "wdth" 100;
     letter-spacing: -0.1em;
+}
+
+/* 메인 콘텐츠 박스 */
+
+#main_con {
+    /* background-color: blueviolet; */
+    height: 200%;
+}
+.subcon_title {
+    transition: ease-in-out .5s;
+}
+#Anchovy {
+    position: fixed;
+    width: 100%;
+    /* background-color: red; */
+    height: 130%;
+    top: 0%;
+    transition: ease-in-out .5s;
+    /* left: 25%; */
+    /* background-color: blue; */
+    /* opacity: 30%; */
+    /* mix-blend-mode: exclusion; */
+    /* pointer-events: none; */
 }
 
 .type_main {
@@ -57,23 +64,24 @@ body {
 line-height: 1.6em;
 }
 
-.sub_con {
+.con-box {
     /* z-index: 999; */
     width: 100%;
     /* background-color: #ff0; */
     padding:32% 0%;
 }
 
-.sub_con h1 {
+.con-box h1 {
     margin-top:0%;
     /* background-color: #f00; */
     text-align:center;
     font-weight: 700;
     font-size: 10em;
     letter-spacing: -0.04em;
-    margin-bottom: -0.6%;
+       line-height: 1.1em;
+    margin-bottom: -0.2%;
 }
-.sub_con p {
+.con-box p {
     width: 100%;
     /* background-color: #f0f; */
     text-align: center;
@@ -82,6 +90,33 @@ line-height: 1.6em;
     letter-spacing: -0.04em;
 }
 
-h1 {
+#main_con h1 {
     transition:1s;
+}
+
+/* 서브 콘탠츠 1 */
+#sub_con_1 {
+    margin-top: 3%;
+    /* background-color: aqua; */
+    width: 100%;
+    height: 130%;
+    position: absolute;
+    overflow: hidden;
+}
+
+#sub_con_1 spline-viewer {
+    height: 130%;
+    position: relative;
+    top: -15%;
+}
+
+#sub_con_1 h1 {
+    letter-spacing: -0.04em;
+    position: absolute;
+    /* background-color: aquamarine; */
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    top: 90%;
+    pointer-events: none;
 }
