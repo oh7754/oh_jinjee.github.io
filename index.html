@@ -4,10 +4,9 @@
         <meta charset="utf-8" />
         <!-- 제이쿼리 -->
         <script src="https://code.jquery.com/jquery-latest.min.js"></script>
-        <script src="js/script.js"></script>
-
+        <script src="./js/script.js"></script>
         <!-- 스플라인 가져오기 -->
-        <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.71/build/spline-viewer.js"></script>
+        
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.71/build/spline-viewer.js"></script>
 
         <!-- 폰트 -->
@@ -15,9 +14,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Kalnia:wght@100..700&display=swap" rel="stylesheet">
         <!-- 스타일 -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
+        
         <div id="main_con">
             <div class="Kalnia type_main" id='op1'>
                 <div>
@@ -30,7 +30,20 @@
                     “Everything is wonderful here. Stores are full of good food. Movie theaters show good films from the West.
                      Apartments are large and luxurious. The only thing you cannot buy is red ink.”</p>
             </div>
-            <spline-viewer id="Anchovy" url="https://prod.spline.design/LHm7fTMl2DQORLea/scene.splinecode"></spline-viewer>
+            
+            <div id="Anchovy">
+                <canvas id="canvas3d"></canvas>
+                <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+                <script type="importmap">
+                {
+                    "imports": {
+                    "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.0.71/build/runtime.js"
+                    }
+                }
+                </script>
+            </div>
+
+            <!-- <spline-viewer id="Anchovy" url="https://prod.spline.design/LHm7fTMl2DQORLea/scene.splinecode"></spline-viewer> -->
             <div class="con-box">
                 <div class="subcon_title">
                     <h1 class="Kalnia">Stir-fried Anchovy</h1>
@@ -39,7 +52,21 @@
             </div>
         </div>
         <div id="sub_con_1">
-            <spline-viewer url="https://prod.spline.design/Cdt0v-Q0IhcbeqKt/scene.splinecode"></spline-viewer>
+            <!-- <spline-viewer url="https://prod.spline.design/Cdt0v-Q0IhcbeqKt/scene.splinecode"></spline-viewer> -->
+            <div>
+                <canvas id="canvas3d-1"></canvas>
+                <a class="logo" href="https://spline.design"></a>
+                <!-- Import maps polyfill -->
+                <!-- Remove this when import maps will be widely supported -->
+                <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+                <script type="importmap">
+                {
+                    "imports": {
+                    "@splinetool/runtime": "https://unpkg.com/@splinetool/runtime@1.0.71/build/runtime.js"
+                    }
+                }
+                </script>
+            </div>
             <div>
                 <h1 class="Kalnia">Anchovies have a habit of mainly living in groups.</h1>
             </div>
@@ -48,5 +75,5 @@
 
 
     </body>
-    
+    <script type="module" src="./src/main.js"></script>
 </html>

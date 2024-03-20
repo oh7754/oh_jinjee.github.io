@@ -63,7 +63,7 @@ body {
     text-align: center;
     font-size: 1.8em;
     margin: auto;
-    margin-top: 4%;
+    margin-top: 5.4%;
     word-wrap: break-word;
 }
 
@@ -113,10 +113,11 @@ line-height: 1.6em;
     width: 100%;
 }
 
-#sub_con_1 spline-viewer {
-    height: 130%;
+#sub_con_1 #canvas3d-1 {
+    height: 140%;
     position: fixed;
-    top: -15%;
+    /* display: block; */
+    top: -4%;
     opacity: 0%;
     -moz-transition-delay: .7s;
     transition: .7s;
@@ -134,4 +135,5 @@ line-height: 1.6em;
     top: 0%;
     pointer-events: none;
     z-index: 999;
+    font-weight: 200;
 }
