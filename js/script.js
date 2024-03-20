@@ -11,15 +11,19 @@ $(document).ready(
             }
         );
 
-        var isVisible = false;
+        
 
 
         $(window).on('scroll', function() {
-            var isVisible = checkVisible($('#sub_con_1'));
+            var isVisible = checkVisible($('#sub_con_1 h1'));
             // $("#Anchovy").css("top", isVisible ? "-40%" : "0%");
             $("#Anchovy , .subcon_title").css("opacity", isVisible ? "0%" : "100%");
+            $("#Anchovy , .subcon_title").css("pointer-events", isVisible ? "none" : "all");
+            $("#sub_con_1 spline-viewer").css("opacity", isVisible ? "100%" : "0%");
+            $("#sub_con_1 spline-viewer").css("pointer-events", isVisible ? "all" : "none");
         });
         
+        var isVisible = false;
 
         function checkVisible(elm, eval) {
             eval = eval || "object visible";
@@ -37,6 +41,7 @@ $(document).ready(
                 return (y < (viewportHeight + scrolltop));
             }
         }
+        
         
         
     }
