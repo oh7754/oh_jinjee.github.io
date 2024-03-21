@@ -116,7 +116,6 @@ line-height: 1.6em;
 #sub_con_1 #canvas3d-1 {
     height: 140%;
     position: fixed;
-    /* display: block; */
     top: -4%;
     opacity: 0%;
     transition-delay: .7s;
@@ -125,15 +124,46 @@ line-height: 1.6em;
     pointer-events: none
 }
 
-#sub_con_1 h1 {
+#sub_con_1 .t_box {
     letter-spacing: -0.04em;
     position: relative;
-    /* background-color: aquamarine; */
-    text-align: center;
+    /* background-color: red; */
     width: 100%;
     padding: 2% 0;
     top: 0%;
     pointer-events: none;
     z-index: 999;
     font-weight: 200;
+}
+
+#sub_con_1 .t_box > div {
+    width: 100%;
+    margin-top:10%;
+    height: 1%;
+    background-color: aqua;
+}
+
+#sub_con_1 h1 {
+    width: 100%;
+    text-align: center;
+    /* background-color: aquamarine; */
+    transition: 1s;
+    font-size: 2em;
+}
+
+/* 컨텐츠2번 */
+
+.sub_con_2 {
+    width: 100%;
+    /* position: absolute; */
+    /* background-color: aqua; */
+    height: 100%;
+
+}
+
+#sub_con_2 #Anchovy_3{
+    width: 100%;
+    /* background-color: red; */
+    /* opacity: 0; */
+
 }
