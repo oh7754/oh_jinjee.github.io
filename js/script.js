@@ -44,7 +44,7 @@ $(document).ready(
                 $("#canvas3d-1").css("opacity", "0%");
                 $("#canvas3d-1").css("pointer-events", "none");
                 $("#Anchovy , .subcon_title").css("pointer-events", "none");
-                $("#sub_con_1 h1").css("font-size", "3.6em");
+                $("#sub_con_1 h1").css("font-size", "3em");
             }
             
         }
