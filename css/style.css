@@ -37,7 +37,6 @@ body {
 /* 메인 콘텐츠 박스 */
 
 #main_con {
-    /* background-color: blueviolet; */
     height: 200%;
 }
 .subcon_title {
@@ -46,20 +45,13 @@ body {
 #Anchovy {
     position: fixed;
     width: 100%;
-    /* background-color: red; */
     height: 130%;
     top: 0%;
     transition: ease-in-out .5s;
-    /* left: 25%; */
-    /* background-color: blue; */
-    /* opacity: 30%; */
-    /* mix-blend-mode: exclusion; */
-    /* pointer-events: none; */
 }
 
 .type_main {
     width: 54%;
-    /* background-color: brown; */
     text-align: center;
     font-size: 1.8em;
     margin: auto;
@@ -77,15 +69,12 @@ line-height: 1.6em;
 }
 
 .con-box {
-    /* z-index: 999; */
     width: 100%;
-    /* background-color: #ff0; */
     padding:32% 0%;
 }
 
 .con-box h1 {
     margin-top:0%;
-    /* background-color: #f00; */
     text-align:center;
     font-weight: 700;
     font-size: 10em;
@@ -95,7 +84,6 @@ line-height: 1.6em;
 }
 .con-box p {
     width: 100%;
-    /* background-color: #f0f; */
     text-align: center;
     font-weight: 400;
     font-size: 1.8em;
@@ -109,7 +97,6 @@ line-height: 1.6em;
 /* 서브 콘탠츠 1 */
 #sub_con_1 {
     margin-top: 3%;
-    /* background-color: aqua; */
     width: 100%;
 }
 
@@ -127,7 +114,6 @@ line-height: 1.6em;
 #sub_con_1 .t_box {
     letter-spacing: -0.04em;
     position: relative;
-    /* background-color: red; */
     width: 100%;
     padding: 2% 0;
     top: 0%;
@@ -146,7 +132,6 @@ line-height: 1.6em;
 #sub_con_1 h1 {
     width: 100%;
     text-align: center;
-    /* background-color: aquamarine; */
     transition: 1s;
     font-size: 2em;
 }
@@ -155,15 +140,10 @@ line-height: 1.6em;
 
 .sub_con_2 {
     width: 100%;
-    /* position: absolute; */
-    /* background-color: aqua; */
     height: 100%;
 
 }
 
 #sub_con_2 #Anchovy_3{
     width: 100%;
-    /* background-color: red; */
-    /* opacity: 0; */
-
 }
