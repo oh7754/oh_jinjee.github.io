@@ -120,21 +120,24 @@ line-height: 1.6em;
     pointer-events: none;
     z-index: 999;
     font-weight: 200;
+    /* background-color: aqua; */
 }
 
-#sub_con_1 .t_box > div {
+#sub_con_1 .t_box div {
     width: 100%;
     margin-top:26%;
     height: 1%;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
-#sub_con_1 h1 {
+#sub_con_1 h2 {
     width: 100%;
     text-align: center;
     transition: 1s;
     font-size: 2em;
     font-weight: 400;
+    display: inline-block;
+    /* background-color: aqua; */
 }
 
 /* 컨텐츠2번 */

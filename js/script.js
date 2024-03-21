@@ -11,7 +11,7 @@ $(document).ready(
             }
         );
         $(window).scroll(function() {
-            var subCon1 = $('#sub_con_1 h1')[0];
+            var subCon1 = $('#sub_con_1 h2')[0];
             var subCon1Rect = subCon1.getBoundingClientRect();
             var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
         
@@ -22,14 +22,14 @@ $(document).ready(
                 $("#Anchovy , .subcon_title").css("pointer-events", "none");
                 $("#canvas3d-1").css("opacity", "100%");
                 $("#canvas3d-1").css("pointer-events", "all");
-                $("#sub_con_1 h1").css("font-size", "2em");
+                $("#sub_con_1 h2").css("font-size", "2em");
             } else {
                 // 요소가 뷰포트에 없는 경우 실행할 코드
                 $("#Anchovy , .subcon_title").css("opacity", "100%");
                 $("#Anchovy , .subcon_title").css("pointer-events", "all");
                 $("#canvas3d-1").css("opacity", "0%");
                 $("#canvas3d-1").css("pointer-events", "none");
-                $("#sub_con_1 h1").css("font-size", "2em");
+                $("#sub_con_1 h2").css("font-size", "2em");
             }
 
             if ($('#close').offset().top + $('#close').outerHeight() <= $(window).scrollTop() + $(window).height()) {
@@ -39,7 +39,7 @@ $(document).ready(
                 $("#canvas3d-1").css("opacity", "0%");
                 $("#canvas3d-1").css("pointer-events", "none");
                 $("#Anchovy , .subcon_title").css("pointer-events", "none");
-                $("#sub_con_1 h1").css("font-size", "3em");
+                $("#sub_con_1 h2").css("font-size", "3em");
             }
 
             // 초기 로드 시와 스크롤 시 동작 실행
