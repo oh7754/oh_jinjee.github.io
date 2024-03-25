@@ -19,157 +19,71 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 스크롤 인터랙션--------------------------------------------------------------------------
 
-    document.addEventListener("DOMContentLoaded", function() {
         window.addEventListener("scroll", function() {
-            var con2OpenElement = document.querySelector(".con2_open");
-            var con2OpenRect = con2OpenElement.getBoundingClientRect();
-            var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+            const con2OpenElement = document.querySelector(".con2_open");
+            const con2OpenRect = con2OpenElement.getBoundingClientRect();
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            const additionalElement = document.getElementById("close");
+            const additionalRect = additionalElement.getBoundingClientRect();
+
+            // 태그 변수로 만들어버리기
+            const con1Spline = document.getElementById("spline3d-1");
+            const con2Spline = document.getElementById("spline3d-2");
+            const con3Spline = document.getElementById("spline3d-3");
+            const t_box2 = document.querySelector(".t_box2");
+            const open = document.querySelector(".con2_open");
 
             if (con2OpenRect.top >= 0 && con2OpenRect.bottom <= viewportHeight) {
                 // .con2_open 요소가 뷰포트에 보일 때 실행할 코드
                 console.log(".con2_open is now visible");
 
-                document.querySelectorAll("#spline3d-1 , .t_box2").forEach(function(AnchovyVisible) {
-                    AnchovyVisible.style.opacity = "0%";
-                    AnchovyVisible.style.pointerEvents = "none";
+                [con1Spline, t_box2].forEach(function(el) {
+                    el.style.opacity = "0%";
+                    el.style.pointerEvents = "none";
                 });
 
-                document.querySelectorAll("#spline3d-2").forEach(function(AnchovyVisible) {
-                    AnchovyVisible.style.opacity = "100%";
-                    AnchovyVisible.style.pointerEvents = "all";
+                [con2Spline, open].forEach(function(el) {
+                    el.style.opacity = "100%";
+                    el.style.pointerEvents = "all";
                 });
             } else {
-                console.log(".con2_open is now Invisible");
 
-                document.querySelectorAll("#spline3d-1 , .t_box2").forEach(function(AnchovyVisible) {
-                    AnchovyVisible.style.opacity = "100%";
-                    AnchovyVisible.style.pointerEvents = "all";
+                [con1Spline, t_box2, open].forEach(function(el) {
+                    el.style.opacity = "100%";
+                    el.style.pointerEvents = "all";
                 });
 
-                document.querySelectorAll("#spline3d-2").forEach(function(AnchovyVisible) {
-                    AnchovyVisible.style.opacity = "0%";
-                    AnchovyVisible.style.pointerEvents = "none";
+                [con2Spline].forEach(function(el) {
+                    el.style.opacity = "0%";
+                    el.style.pointerEvents = "none";
                 });
 
+            };
+
+            if (additionalRect.top >= 0 && additionalRect.bottom <= viewportHeight) {
+                    console.log("close is now visible");
+
+                    [con2Spline, t_box2, open].forEach(function(el) {
+                        el.style.opacity = "0%";
+                        el.style.pointerEvents = "none";
+                    });
+                    [con3Spline].forEach(function(el) {
+                        el.style.opacity = "100%";
+                        el.style.pointerEvents = "all";
+                    });
+            } else {
+                [con3Spline].forEach(function(el) {
+                    el.style.opacity = "0%";
+                    el.style.pointerEvents = "none";
+                });
             }
+
         });
-    });
 
 
 // 닫기--------------------------------------------------------------------------------------------
 });
 
 
-    // console.log(document.querySelector("h1"));
-    // function scrollToElement() {
-    //     var subCon1 = document.querySelector('#sub_con_1 h2');
-    //     var subCon1Rect = subCon1.getBoundingClientRect();
-    //     var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-    //     if (subCon1Rect.top >= 0 && subCon1Rect.bottom <= viewportHeight) {
-    //         // 요소가 뷰포트에 있는 경우 실행할 코드
-    //         // console.log('#sub_con_1 is now visible');
-    //         document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-    //             element.style.opacity = "0%";
-    //             element.style.pointerEvents = "none";
-    //         });
-    //         document.getElementById("spline3d-2").style.opacity = "100%";
-    //         document.getElementById("spline3d-2").style.pointerEvents = "all";
-    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
-    //     } else {
-    //         // 요소가 뷰포트에 없는 경우 실행할 코드
-    //         document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-    //             element.style.opacity = "100%";
-    //             element.style.pointerEvents = "all";
-    //         });
-    //         document.getElementById("spline3d-2").style.opacity = "0%";
-    //         document.getElementById("spline3d-2").style.pointerEvents = "none";
-    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
-    //     }
-
-    //     if (document.getElementById("close").offsetTop + document.getElementById("close").offsetHeight <= window.scrollY + window.innerHeight) {
-    //         // #close가 뷰포트에 보일 때 실행할 코드
-    //         // console.log('#close is visible');
-    //         document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-    //             element.style.opacity = "0%";
-    //             element.style.pointerEvents = "none";
-    //         });
-    //         document.getElementById("spline3d-2").style.opacity = "0%";
-    //         document.getElementById("spline3d-2").style.pointerEvents = "none";
-    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "3em";
-    //     }
-    // }
-
-    // // // 초기 로드 시와 스크롤 시 동작 실행
-    // // scrollToElement();
-    // // window.addEventListener('scroll', scrollToElement);
-
-    // // // 뷰포트 크기 변경 시 재계산을 위해 이벤트 리스너 추가
-    // // window.addEventListener("resize", function() {
-    // //     var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    // //     var targetElementOffsetTop = document.getElementById('sub_con_1').offsetTop;
-    // //     var scrollAmountNeeded = targetElementOffsetTop - viewportHeight;
-    // // });
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     document.getElementById("Anchovy").addEventListener("mousedown", function() {
-//         document.querySelector("h1").style.fontWeight = "100";
-//     });
-
-//     document.getElementById("Anchovy").addEventListener("mouseup", function() {
-//         document.querySelector("h1").style.fontWeight = "700";
-//     });
-
-//     function scrollToElement() {
-//         var subCon1 = document.querySelector('#sub_con_1 h2');
-//         var subCon1Rect = subCon1.getBoundingClientRect();
-//         var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-
-//         if (subCon1Rect.top >= 0 && subCon1Rect.bottom <= viewportHeight) {
-//             // 요소가 뷰포트에 있는 경우 실행할 코드
-//             // console.log('#sub_con_1 is now visible');
-//             document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-//                 element.style.opacity = "0%";
-//                 element.style.pointerEvents = "none";
-//             });
-//             document.getElementById("spline3d-2").style.opacity = "100%";
-//             document.getElementById("spline3d-2").style.pointerEvents = "all";
-//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
-//         } else {
-//             // 요소가 뷰포트에 없는 경우 실행할 코드
-//             document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-//                 element.style.opacity = "100%";
-//                 element.style.pointerEvents = "all";
-//             });
-//             document.getElementById("spline3d-2").style.opacity = "0%";
-//             document.getElementById("spline3d-2").style.pointerEvents = "none";
-//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
-//         }
-
-//         if (document.getElementById("close").offsetTop + document.getElementById("close").offsetHeight <= window.scrollY + window.innerHeight) {
-//             // #close가 뷰포트에 보일 때 실행할 코드
-//             // console.log('#close is visible');
-//             document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-//                 element.style.opacity = "0%";
-//                 element.style.pointerEvents = "none";
-//             });
-//             document.getElementById("spline3d-2").style.opacity = "0%";
-//             document.getElementById("spline3d-2").style.pointerEvents = "none";
-//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "3em";
-//         }
-//     }
-
-//     // 초기 로드 시와 스크롤 시 동작 실행
-//     scrollToElement();
-//     window.addEventListener('scroll', scrollToElement);
-
-//     // 뷰포트 크기 변경 시 재계산을 위해 이벤트 리스너 추가
-//     window.addEventListener("resize", function() {
-//         var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-//         var targetElementOffsetTop = document.getElementById('sub_con_1').offsetTop;
-//         var scrollAmountNeeded = targetElementOffsetTop - viewportHeight;
-//     });
 

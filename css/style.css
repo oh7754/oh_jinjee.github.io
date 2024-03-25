@@ -101,5 +101,32 @@ p{
     /* background-color: red; */
     font-size: 2em;
     padding: 4% 0;
-    margin-bottom: 10%;
+    margin-bottom: 30%;
+    pointer-events: none;
+}
+
+#close {
+    width: 100%;
+    padding: 1%;
+    /* background-color: aquamarine; */
+    margin-bottom: 2%;
+}
+
+/* 컨테이너 3 */
+
+.con3 {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 60%; */
+    /* background-color: aqua; */
+    position: fixed;
+    top: 6%;
+    pointer-events: none;
+
+}
+
+#spline3d-3 {
+    opacity: 0%;
+    pointer-events: none;
 }
