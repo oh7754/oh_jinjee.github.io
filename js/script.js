@@ -17,6 +17,46 @@ document.addEventListener("DOMContentLoaded", function() {
     // 주어진 함수는 배열의 크기만큼 반복 실행되며, 배열 요소의 개수에 따라 콜백 함수가 호출되는 횟수가 결정됩니다.
     // >>> 걍 각각 전부 (속성?)값 적용
 
+// 스크롤 인터랙션--------------------------------------------------------------------------
+
+    document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("scroll", function() {
+            var con2OpenElement = document.querySelector(".con2_open");
+            var con2OpenRect = con2OpenElement.getBoundingClientRect();
+            var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+            if (con2OpenRect.top >= 0 && con2OpenRect.bottom <= viewportHeight) {
+                // .con2_open 요소가 뷰포트에 보일 때 실행할 코드
+                console.log(".con2_open is now visible");
+
+                document.querySelectorAll("#spline3d-1 , .t_box2").forEach(function(AnchovyVisible) {
+                    AnchovyVisible.style.opacity = "0%";
+                    AnchovyVisible.style.pointerEvents = "none";
+                });
+
+                document.querySelectorAll("#spline3d-2").forEach(function(AnchovyVisible) {
+                    AnchovyVisible.style.opacity = "100%";
+                    AnchovyVisible.style.pointerEvents = "all";
+                });
+            } else {
+                console.log(".con2_open is now Invisible");
+
+                document.querySelectorAll("#spline3d-1 , .t_box2").forEach(function(AnchovyVisible) {
+                    AnchovyVisible.style.opacity = "100%";
+                    AnchovyVisible.style.pointerEvents = "all";
+                });
+
+                document.querySelectorAll("#spline3d-2").forEach(function(AnchovyVisible) {
+                    AnchovyVisible.style.opacity = "0%";
+                    AnchovyVisible.style.pointerEvents = "none";
+                });
+
+            }
+        });
+    });
+
+
+// 닫기--------------------------------------------------------------------------------------------
 });
 
 
@@ -33,43 +73,43 @@ document.addEventListener("DOMContentLoaded", function() {
     //             element.style.opacity = "0%";
     //             element.style.pointerEvents = "none";
     //         });
-    //         document.getElementById("canvas3d-1").style.opacity = "100%";
-    //         document.getElementById("canvas3d-1").style.pointerEvents = "all";
-    //         document.querySelector("#sub_con_1 h2").style.fontSize = "2em";
+    //         document.getElementById("spline3d-2").style.opacity = "100%";
+    //         document.getElementById("spline3d-2").style.pointerEvents = "all";
+    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
     //     } else {
     //         // 요소가 뷰포트에 없는 경우 실행할 코드
     //         document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
     //             element.style.opacity = "100%";
     //             element.style.pointerEvents = "all";
     //         });
-    //         document.getElementById("canvas3d-1").style.opacity = "0%";
-    //         document.getElementById("canvas3d-1").style.pointerEvents = "none";
-    //         document.querySelector("#sub_con_1 h2").style.fontSize = "2em";
+    //         document.getElementById("spline3d-2").style.opacity = "0%";
+    //         document.getElementById("spline3d-2").style.pointerEvents = "none";
+    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
     //     }
 
     //     if (document.getElementById("close").offsetTop + document.getElementById("close").offsetHeight <= window.scrollY + window.innerHeight) {
     //         // #close가 뷰포트에 보일 때 실행할 코드
     //         // console.log('#close is visible');
-            // document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
-            //     element.style.opacity = "0%";
-            //     element.style.pointerEvents = "none";
-            // });
-    //         document.getElementById("canvas3d-1").style.opacity = "0%";
-    //         document.getElementById("canvas3d-1").style.pointerEvents = "none";
-    //         document.querySelector("#sub_con_1 h2").style.fontSize = "3em";
+    //         document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
+    //             element.style.opacity = "0%";
+    //             element.style.pointerEvents = "none";
+    //         });
+    //         document.getElementById("spline3d-2").style.opacity = "0%";
+    //         document.getElementById("spline3d-2").style.pointerEvents = "none";
+    //         document.querySelector("#Anchovy , .t_box2").style.fontSize = "3em";
     //     }
     // }
 
-    // // 초기 로드 시와 스크롤 시 동작 실행
-    // scrollToElement();
-    // window.addEventListener('scroll', scrollToElement);
+    // // // 초기 로드 시와 스크롤 시 동작 실행
+    // // scrollToElement();
+    // // window.addEventListener('scroll', scrollToElement);
 
-    // // 뷰포트 크기 변경 시 재계산을 위해 이벤트 리스너 추가
-    // window.addEventListener("resize", function() {
-    //     var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    //     var targetElementOffsetTop = document.getElementById('sub_con_1').offsetTop;
-    //     var scrollAmountNeeded = targetElementOffsetTop - viewportHeight;
-    // });
+    // // // 뷰포트 크기 변경 시 재계산을 위해 이벤트 리스너 추가
+    // // window.addEventListener("resize", function() {
+    // //     var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+    // //     var targetElementOffsetTop = document.getElementById('sub_con_1').offsetTop;
+    // //     var scrollAmountNeeded = targetElementOffsetTop - viewportHeight;
+    // // });
 
 
 
@@ -95,18 +135,18 @@ document.addEventListener("DOMContentLoaded", function() {
 //                 element.style.opacity = "0%";
 //                 element.style.pointerEvents = "none";
 //             });
-//             document.getElementById("canvas3d-1").style.opacity = "100%";
-//             document.getElementById("canvas3d-1").style.pointerEvents = "all";
-//             document.querySelector("#sub_con_1 h2").style.fontSize = "2em";
+//             document.getElementById("spline3d-2").style.opacity = "100%";
+//             document.getElementById("spline3d-2").style.pointerEvents = "all";
+//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
 //         } else {
 //             // 요소가 뷰포트에 없는 경우 실행할 코드
 //             document.querySelectorAll("#Anchovy , .subcon_title").forEach(function(element) {
 //                 element.style.opacity = "100%";
 //                 element.style.pointerEvents = "all";
 //             });
-//             document.getElementById("canvas3d-1").style.opacity = "0%";
-//             document.getElementById("canvas3d-1").style.pointerEvents = "none";
-//             document.querySelector("#sub_con_1 h2").style.fontSize = "2em";
+//             document.getElementById("spline3d-2").style.opacity = "0%";
+//             document.getElementById("spline3d-2").style.pointerEvents = "none";
+//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "2em";
 //         }
 
 //         if (document.getElementById("close").offsetTop + document.getElementById("close").offsetHeight <= window.scrollY + window.innerHeight) {
@@ -116,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
 //                 element.style.opacity = "0%";
 //                 element.style.pointerEvents = "none";
 //             });
-//             document.getElementById("canvas3d-1").style.opacity = "0%";
-//             document.getElementById("canvas3d-1").style.pointerEvents = "none";
-//             document.querySelector("#sub_con_1 h2").style.fontSize = "3em";
+//             document.getElementById("spline3d-2").style.opacity = "0%";
+//             document.getElementById("spline3d-2").style.pointerEvents = "none";
+//             document.querySelector("#Anchovy , .t_box2").style.fontSize = "3em";
 //         }
 //     }
 
