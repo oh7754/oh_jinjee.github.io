@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("Anchovy").addEventListener("mousedown", function() {
+    document.querySelector("#Anchovy").addEventListener("mousedown", function() {
         document.querySelectorAll(".headline").forEach(function(heads) {
             heads.style.fontWeight = "100";
             // heads.classList.add('headline_Pressed');
         });
     });
 
-    document.getElementById("Anchovy").addEventListener("mouseup", function() {
+    document.querySelector("#Anchovy").addEventListener("mouseup", function() {
         document.querySelectorAll(".headline").forEach(function(heads) {
             heads.style.fontWeight = "700";
         });
@@ -19,27 +19,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // 스크롤 인터랙션--------------------------------------------------------------------------
 
+// *******************************************
+// * 내일은 이거 변수말고 클레스인 버전 하나더 만들어보기 *
+// *******************************************
+
         window.addEventListener("scroll", function() {
             const con2OpenElement = document.querySelector(".con2_open");
             const con2OpenRect = con2OpenElement.getBoundingClientRect();
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-            const additionalElement = document.getElementById("close");
+            const additionalElement = document.querySelector("#close");
             const additionalRect = additionalElement.getBoundingClientRect();
 
-            // 태그 변수로 만들어버리기
-            const con1Spline = document.getElementById("spline3d-1");
-            const con2Spline = document.getElementById("spline3d-2");
-            const con3Spline = document.getElementById("spline3d-3");
+            // 태그 변수로 만들어버리기----
+            const con1Spline = document.querySelector("#spline3d-1");
+            const con2Spline = document.querySelector("#spline3d-2");
+            const con3Spline = document.querySelector("#spline3d-3");
             const t_box2 = document.querySelector(".t_box2");
             const open = document.querySelector(".con2_open");
 
-            // 스타일 한방에 바꾸기
+            // 스타일 한방에 바꾸기----
             const AnchoVi = { opacity : "100%" , pointerEvents : "all"}
             const AnchoInVi = { opacity : "0%" , pointerEvents : "none"}
 
             if (con2OpenRect.top >= 0 && con2OpenRect.bottom <= viewportHeight) {
-                // .con2_open 요소가 뷰포트에 보일 때 실행할 코드
+                // .con2_open 요소가 뷰포트에 보일 때 실행할 코드----
                 console.log(".con2_open is now visible");
 
                 [con1Spline, t_box2].forEach(function(el) {
@@ -49,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 [con2Spline, open].forEach(function(el) {
                     Object.assign(el.style, AnchoVi);
                 });
+
             } else {
 
                 [con1Spline, t_box2, open].forEach(function(el) {
@@ -60,11 +65,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
             if (additionalRect.top >= 0 && additionalRect.bottom <= viewportHeight) {
                     console.log("close is now visible");
-                    // 여러개 바꿀때----------
+                    // 여러개 바꿀때--------------
                     [con2Spline, t_box2, open].forEach(function(el) {
                         Object.assign(el.style, AnchoInVi);
                     });
-                    // 1개만 바꿀때-----------
+                    // 1개만 바꿀때--------------
                     Object.assign(con3Spline.style, AnchoVi);
                     
             } else {
@@ -76,6 +81,3 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 // 닫기--------------------------------------------------------------------------------------------
 });
-
-
-

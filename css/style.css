@@ -131,3 +131,14 @@ p{
     pointer-events: none;
     transition: 1s;
 }
+
+
+.AnchoVi {
+    opacity: 100%;
+    transition: 1s!important;
+}
+
+.AnchoInVi {
+    opacity: 0%;
+    transition: 1s!important;
+}

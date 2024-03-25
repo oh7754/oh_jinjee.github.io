@@ -270,3 +270,11 @@ $(document).ready(
 #main_con .headline_Pressed {
     font-weight: 100;
     }
+
+
+
+
+
+
+    con2Spline.classList.add("AnchoVi");   
+                con2Spline.classList.remove("AnchoInVi"); 
