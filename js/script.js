@@ -34,54 +34,46 @@ document.addEventListener("DOMContentLoaded", function() {
             const t_box2 = document.querySelector(".t_box2");
             const open = document.querySelector(".con2_open");
 
+            // 스타일 한방에 바꾸기
+            const AnchoVi = { opacity : "100%" , pointerEvents : "all"}
+            const AnchoInVi = { opacity : "0%" , pointerEvents : "none"}
+
             if (con2OpenRect.top >= 0 && con2OpenRect.bottom <= viewportHeight) {
                 // .con2_open 요소가 뷰포트에 보일 때 실행할 코드
                 console.log(".con2_open is now visible");
 
                 [con1Spline, t_box2].forEach(function(el) {
-                    el.style.opacity = "0%";
-                    el.style.pointerEvents = "none";
+                    Object.assign(el.style, AnchoInVi);
                 });
 
                 [con2Spline, open].forEach(function(el) {
-                    el.style.opacity = "100%";
-                    el.style.pointerEvents = "all";
+                    Object.assign(el.style, AnchoVi);
                 });
             } else {
 
                 [con1Spline, t_box2, open].forEach(function(el) {
-                    el.style.opacity = "100%";
-                    el.style.pointerEvents = "all";
+                    Object.assign(el.style, AnchoVi);
                 });
 
-                [con2Spline].forEach(function(el) {
-                    el.style.opacity = "0%";
-                    el.style.pointerEvents = "none";
-                });
-
+                Object.assign(con2Spline.style, AnchoInVi);
             };
 
             if (additionalRect.top >= 0 && additionalRect.bottom <= viewportHeight) {
                     console.log("close is now visible");
-
+                    // 여러개 바꿀때----------
                     [con2Spline, t_box2, open].forEach(function(el) {
-                        el.style.opacity = "0%";
-                        el.style.pointerEvents = "none";
+                        Object.assign(el.style, AnchoInVi);
                     });
-                    [con3Spline].forEach(function(el) {
-                        el.style.opacity = "100%";
-                        el.style.pointerEvents = "all";
-                    });
+                    // 1개만 바꿀때-----------
+                    Object.assign(con3Spline.style, AnchoVi);
+                    
             } else {
-                [con3Spline].forEach(function(el) {
-                    el.style.opacity = "0%";
-                    el.style.pointerEvents = "none";
-                });
+                
+                Object.assign(con3Spline.style, AnchoInVi);
+                
             }
 
         });
-
-
 // 닫기--------------------------------------------------------------------------------------------
 });
 
