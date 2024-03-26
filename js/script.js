@@ -74,10 +74,8 @@ document.addEventListener("DOMContentLoaded", function() {
                     
             } else {
                 
-                Object.assign(con3Spline.style, AnchoInVi);
-                
+                Object.assign(con3Spline.style, AnchoInVi);   
             }
-
         });
 // 닫기--------------------------------------------------------------------------------------------
 });
