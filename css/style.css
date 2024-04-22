@@ -143,9 +143,6 @@ p{
     transition: 1s!important;
 }
 
-/* @media all and (min-width:768px) {
-    속성: 속성값;} */
-
 #back {
     position: fixed;
     left: -20vw;
@@ -159,7 +156,7 @@ p{
     z-index: -9999;
 }
 
-@media (max-width:680px) {
+@media (max-width:780px) {
     
 
     body {
@@ -272,4 +269,4 @@ p{
         margin-bottom: 2%;
         /* background-color: aquamarine; */
     }
-} 
+}
