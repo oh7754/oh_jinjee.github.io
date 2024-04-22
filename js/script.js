@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // 스타일 한방에 바꾸기----
             const AnchoVi = { opacity : "100%" , pointerEvents : "all"}
             const AnchoInVi = { opacity : "0%" , pointerEvents : "none"}
+            const openVi = { opacity : "100%" , pointerEvents : "none"}
 
             if (con2OpenRect.top >= 0 && con2OpenRect.bottom <= viewportHeight) {
                 // .con2_open 요소가 뷰포트에 보일 때 실행할 코드----
@@ -50,15 +51,19 @@ document.addEventListener("DOMContentLoaded", function() {
                     Object.assign(el.style, AnchoInVi);
                 });
 
-                [con2Spline, open].forEach(function(el) {
+                [con2Spline].forEach(function(el) {
                     Object.assign(el.style, AnchoVi);
                 });
+
+                Object.assign(open.style, openVi);
 
             } else {
 
-                [con1Spline, t_box2, open].forEach(function(el) {
+                [con1Spline, t_box2].forEach(function(el) {
                     Object.assign(el.style, AnchoVi);
                 });
+
+                Object.assign(open.style, openVi);
 
                 Object.assign(con2Spline.style, AnchoInVi);
             };
@@ -76,6 +81,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 Object.assign(con3Spline.style, AnchoInVi);   
             }
+
+
         });
 // 닫기--------------------------------------------------------------------------------------------
 });
