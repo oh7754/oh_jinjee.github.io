@@ -28,8 +28,11 @@ document.addEventListener("DOMContentLoaded", function() {
             const con2OpenRect = con2OpenElement.getBoundingClientRect();
             const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-            const additionalElement = document.querySelector("#close");
+            const additionalElement = document.querySelector(".close");
             const additionalRect = additionalElement.getBoundingClientRect();
+
+            const BoxElement = document.querySelector(".box");
+            const BoxRect = BoxElement.getBoundingClientRect();
 
             // 태그 변수로 만들어버리기----
             const con1Spline = document.querySelector("#spline3d-1");
@@ -37,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const con3Spline = document.querySelector("#spline3d-3");
             const t_box2 = document.querySelector(".t_box2");
             const open = document.querySelector(".con2_open");
+            const con4 = document.querySelector(".con4");
 
             // 스타일 한방에 바꾸기----
             const AnchoVi = { opacity : "100%" , pointerEvents : "all"}
@@ -68,20 +72,23 @@ document.addEventListener("DOMContentLoaded", function() {
                 Object.assign(con2Spline.style, AnchoInVi);
             };
 
-            if (additionalRect.top >= 0 && additionalRect.bottom <= viewportHeight) {
+            if (additionalRect.bottom <= viewportHeight) {
                     console.log("close is now visible");
                     // 여러개 바꿀때--------------
-                    [con2Spline, t_box2, open].forEach(function(el) {
+                    [con1Spline, con2Spline, t_box2, open].forEach(function(el) {
                         Object.assign(el.style, AnchoInVi);
                     });
                     // 1개만 바꿀때--------------
-                    Object.assign(con3Spline.style, AnchoVi);
+                    [con4, con3Spline].forEach(function(el) {
+                        Object.assign(el.style, AnchoVi);
+                    }); 
                     
             } else {
-                
-                Object.assign(con3Spline.style, AnchoInVi);   
-            }
 
+                [con4, con3Spline].forEach(function(el) {
+                    Object.assign(el.style, AnchoInVi);
+                }); 
+            }
 
         });
 // 닫기--------------------------------------------------------------------------------------------
