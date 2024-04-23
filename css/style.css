@@ -8,6 +8,11 @@
     scrollbar-width: none; /* 파이어폭스 */
 }
 
+html {
+    -webkit-touch-callout:none;
+    /* -webkit-user-select:none; */
+  }
+  
 body {
     background-color: rgb(255, 255, 255);
     font-family: "Kalnia", serif;
@@ -65,7 +70,7 @@ p{
 #con1 #Anchovy {
     width: 100vw;
     height: 60em;
-    top: 0%;
+    top: 20%;
     position: fixed; 
     /* background-color: aqua; */
 }
