@@ -64,8 +64,8 @@ p{
 
 #con1 #Anchovy {
     width: 100vw;
-    height: 60em;
-    top: 20%;
+    height: 100vh;
+    top: 0;
     position: fixed; 
     /* background-color: aqua; */
 }
@@ -187,11 +187,13 @@ p{
     margin: 2%;
     border-radius: 1.6vw;
 }
-
+.box * {
+    transition: 700ms!important;
+}
 .box p {
     font-weight: 500;
     text-align: left;
-    margin: 5%;
+    margin: 2% 5%;
 }
 
 .box:hover p {
@@ -203,6 +205,29 @@ p{
     width: 70%;
     font-size: 1vw;
     font-weight: 300;
+}
+.wrap {
+    position: absolute;
+    bottom: 16%;
+    width: 28vw;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+    /* background-color: blue; */
+}
+.btn {
+    background-color: #fff;
+    color: #000;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    padding: 3% 6%;
+    border-radius: 99%; 
+}
+
+.box:hover .btn {
+    color: #fff;
+    background-color: #000;
 }
 
 
@@ -281,6 +306,10 @@ p{
     #con1 .t_box2 .headline {
         font-size: 8vw;
     }
+
+    #con1 #Anchovy {
+        top: 20vh;
+    }
     
 
         /* 컨테이너 2 */
@@ -340,6 +369,7 @@ p{
         font-size: 5vw!important;
         font-weight: 300;
     }
+
 
 
 
