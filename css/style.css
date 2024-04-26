@@ -1,5 +1,7 @@
 * {
     text-decoration-line: none;
+    text-decoration: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     text-decoration: none;
@@ -30,6 +32,56 @@ body {
     filter: blur(999px);
     -webkit-filter: blur(999px);
     z-index: -9999;
+}
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 6vh;
+    padding: 1vh 0;
+    overflow: hidden;
+    /* background-color: rgb(255, 0, 0); */
+}
+header .h-wrap {
+    /* float: left; */
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+#oh {
+    float: left;
+    width: 3vw;
+    height: 100%;
+    fill: none;
+    stroke: #ffffff;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+    stroke-width: 50px;
+    /* background-color: aqua; */
+    margin: 0 auto;
+    text-align: center;
+}
+
+header ul {
+    width: 30%;
+    margin-left:70% ;
+    height: 100%;
+    /* background-color: aqua; */
+}
+
+header ul li {
+    position: relative;
+    text-align: center;
+    width: 33%;
+    height: 70%;
+    margin-top: 4%;
+    /* padding-top: 30%; */
+    float: left;
+    /* background-color: blue; */
 }
 
 p{

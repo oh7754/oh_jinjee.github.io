@@ -161,7 +161,7 @@
     font-size: 1vw;
     font-weight: 300;
 }
-.wrap {
+.box .wrap {
     position: absolute;
     bottom: 16%;
     width: 28vw;
